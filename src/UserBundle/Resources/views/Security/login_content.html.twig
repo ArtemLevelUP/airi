@@ -1,0 +1,30 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div style="width: 450px; margin: 50px auto;">
+    {% if error %}
+        <div class="panel panel-danger">
+            <div class="panel-heading"><i class="glyphicon glyphicon-remove"></i> {{ 'User.Login.ErrorMessage'|trans }}</div>
+        </div>
+    {% endif %}
+    <form action="{{ path("fos_user_security_check") }}" method="post">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+        <div class="form-group">
+            <label for="username">Email:</label>
+            <input type="email" class="form-control" id="username" name="_username" value="{{ last_username }}" required="required"/>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" class="form-control" id="password" name="_password" required="required"/>
+        </div>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> Запомнить
+            </label>
+            <button style="float: right;" id="_submit" name="_submit" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i> Вход</button>
+        </div>
+
+    </form>
+</div>

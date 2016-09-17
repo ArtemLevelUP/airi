@@ -1,0 +1,52 @@
+<?php
+
+/* TwigBundle:Exception:exception.css.twig */
+class __TwigTemplate_b0d9b810faae9cbc1cac09647f870a53eefb333361b99ddc8c7b635ba34a7392 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = array(
+        );
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $__internal_5141b1e356d6f767d8d601b649f720c2d26542cb00709ff6a9a3dd3a9e3df8b9 = $this->env->getExtension("native_profiler");
+        $__internal_5141b1e356d6f767d8d601b649f720c2d26542cb00709ff6a9a3dd3a9e3df8b9->enter($__internal_5141b1e356d6f767d8d601b649f720c2d26542cb00709ff6a9a3dd3a9e3df8b9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:exception.css.twig"));
+
+        // line 1
+        echo "/*
+";
+        // line 2
+        $this->loadTemplate("@Twig/Exception/exception.txt.twig", "TwigBundle:Exception:exception.css.twig", 2)->display(array_merge($context, array("exception" => (isset($context["exception"]) ? $context["exception"] : $this->getContext($context, "exception")))));
+        // line 3
+        echo "*/
+";
+        
+        $__internal_5141b1e356d6f767d8d601b649f720c2d26542cb00709ff6a9a3dd3a9e3df8b9->leave($__internal_5141b1e356d6f767d8d601b649f720c2d26542cb00709ff6a9a3dd3a9e3df8b9_prof);
+
+    }
+
+    public function getTemplateName()
+    {
+        return "TwigBundle:Exception:exception.css.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  27 => 3,  25 => 2,  22 => 1,);
+    }
+}
+/* /**/
+/* {% include '@Twig/Exception/exception.txt.twig' with { 'exception': exception } %}*/
+/* *//* */
+/* */
