@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,6 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Task
 {
+    const STATUS_NEW = 'new';
+
     /**
      * @var int
      *
@@ -79,6 +82,19 @@ class Task
      */
     private $created;
 
+    /**
+     * @var ArrayCollection
+     */
+    private $attachments;
+
+    /**
+     * Task constructor.
+     */
+    public function __construct()
+    {
+        $this->status = self::STATUS_NEW;
+        $this->created = new \DateTime();
+    }
 
     /**
      * Get id
@@ -280,6 +296,22 @@ class Task
     public function getCreated()
     {
         return $this->created;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getAttachments()
+    {
+        return $this->attachments;
+    }
+
+    /**
+     * @param ArrayCollection $attachments
+     */
+    public function setAttachments($attachments)
+    {
+        $this->attachments = $attachments;
     }
 }
 

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>{{ 'Tasks.List.Title'|trans }}</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>{{ 'Tasks.List.Caption'|trans }}</th>
+                <th>{{ 'Tasks.List.Estimation'|trans }}</th>
+                <th>{{ 'Tasks.List.Deadline'|trans }}</th>
+                <th>{{ 'Tasks.List.Status'|trans }}</th>
+                <th>{{ 'Tasks.List.Creator'|trans }}</th>
+                <th>{{ 'Tasks.List.Performer'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task.getTitle() }}</td>
+                    <td>{{ task.getEstimation() }}ч</td>
+                    <td>{{ task.getDeadline()|date('d.m.Y H:i') }}</td>
+                    <td>{{ ('Tasks.Status.' ~ task.getStatus())|trans }}</td>
+                    <td>{{ task.getCreator().getUsername() }}</td>
+                    <td>{{ task.getPerformer().getUsername() }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

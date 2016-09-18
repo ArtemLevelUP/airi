@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>{{ 'Tasks.List.Title'|trans }}</h2>
+    {{ form_start(form) }}
+    <table class="table table-striped">
+    <tbody>
+    <tr>
+        <td>{{ 'Tasks.List.Caption'|trans }}</td>
+        <td>{{ form_widget(form.title, {attr: {'class': 'form-control'}}) }}</td>
+    </tr><tr>
+        <td>{{ 'Tasks.List.Description'|trans }}</td>
+        <td>{{ form_widget(form.description, {attr: {'class': 'form-control'}}) }}</td>
+    </tr><tr>
+        <td>{{ 'Tasks.List.Attachments'|trans }}</td>
+        <td>{{ form_widget(form.attachments) }}</td>
+    </tr><tr>
+        <td>{{ 'Tasks.List.Estimation'|trans }}</td>
+        <td>{{ form_widget(form.estimation, {attr: {'class': 'form-control'}}) }}</td>
+    </tr><tr>
+        <td>{{ 'Tasks.List.Deadline'|trans }}</td>
+        <td>{{ form_widget(form.deadline, {attr: {'class': 'form-control'}}) }}</td>
+    </tr><tr>
+        <td>{{ 'Tasks.List.Performer'|trans }}</td>
+        <td>{{ form_widget(form.performer, {attr: {'class': 'form-control'}}) }}</td>
+    </tr><tr>
+        <td></td>
+        <td>{{ form_widget(form.save, {label: 'Tasks.Form.Save'|trans, attr: {'class': 'btn btn-success'}}) }}</td>
+    </tr>
+    </tbody>
+
+    </table>
+
+    {{ form_end(form) }}
+{% endblock %}

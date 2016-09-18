@@ -1,3 +1,22 @@
 User:
     Login:
         ErrorMessage: Неправильный логин или пароль
+
+Tasks:
+    Status:
+        new: Новая
+        in_progress: Выполняется
+        done: Выполнена
+        approved: Утверждена
+        cancelled: Отменена
+        clarification: Нужны уточнения
+    List:
+        Title: Список задач
+        Caption: Название
+        Estimation: Время на выполнение
+        Deadline: Дедлайн
+        Status: Статус
+        Creator: Постановщик
+        Performer: Исполнитель
+    Form:
+        Save: Сохранить
