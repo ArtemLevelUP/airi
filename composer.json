@@ -34,7 +34,8 @@
         "twitter/bootstrap": "^3.3",
         "components/jquery": "1.11.1",
         "symfony/assetic-bundle": "^2.8",
-        "eternicode/bootstrap-datepicker": "^1.6"
+        "eonasdan/bootstrap-datetimepicker": "^4.17",
+        "etdsolutions/moment": "^2.15"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

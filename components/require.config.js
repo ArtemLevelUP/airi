@@ -3,6 +3,14 @@ var components = {
         {
             "name": "jquery",
             "main": "jquery-built.js"
+        },
+        {
+            "name": "bootstrap-datetimepicker",
+            "main": "bootstrap-datetimepicker-built.js"
+        },
+        {
+            "name": "moment",
+            "main": "moment-built.js"
         }
     ],
     "baseUrl": "components"

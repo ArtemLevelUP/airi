@@ -13,6 +13,8 @@ Tasks:
     List:
         Title: Список задач
         Caption: Название
+        Description: Описание
+        Attachments: Файлы
         Estimation: Время на выполнение
         Deadline: Дедлайн
         Status: Статус

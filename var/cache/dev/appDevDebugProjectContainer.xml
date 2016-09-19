@@ -593,7 +593,7 @@
                   <tag name="cache.pool"/>
                   <argument>t7YHmZ-kNy</argument>
                   <argument>0</argument>
-                  <argument>cO8h9aLzy3xU2V0017jOjA</argument>
+                  <argument>ZfBvjXTSeEpVE5PrbOp+MA</argument>
                   <argument>/var/www/airi/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -606,7 +606,7 @@
                   <tag name="cache.pool"/>
                   <argument>I2h5-FFM6k</argument>
                   <argument>0</argument>
-                  <argument>cO8h9aLzy3xU2V0017jOjA</argument>
+                  <argument>ZfBvjXTSeEpVE5PrbOp+MA</argument>
                   <argument>/var/www/airi/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1257,7 +1257,7 @@
       <tag name="cache.pool"/>
       <argument>CvmuVr-lto</argument>
       <argument>0</argument>
-      <argument>cO8h9aLzy3xU2V0017jOjA</argument>
+      <argument>ZfBvjXTSeEpVE5PrbOp+MA</argument>
       <argument>/var/www/airi/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -2040,7 +2040,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57de5b31cdc3c5.86412854</argument>
+            <argument>57df84e5808106.84302600</argument>
           </service>
         </argument>
       </argument>
@@ -2346,7 +2346,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57de5b31cdc3c5.86412854</argument>
+            <argument>57df84e5808106.84302600</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3140,6 +3140,21 @@
                 <argument type="collection">
                   <argument key="output">fonts/glyphicons-halflings-regular.woff</argument>
                 </argument>
+              </argument>
+              <argument key="bootstrap_datetimepicker_js" type="collection">
+                <argument type="collection">
+                  <argument>/var/www/airi/app/../vendor/eonasdan/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js</argument>
+                  <argument>/var/www/airi/app/../vendor/etdsolutions/moment/moment.js</argument>
+                </argument>
+                <argument type="collection"/>
+                <argument type="collection"/>
+              </argument>
+              <argument key="bootstrap_datetimepicker_css" type="collection">
+                <argument type="collection">
+                  <argument>/var/www/airi/app/../vendor/eonasdan/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css</argument>
+                </argument>
+                <argument type="collection"/>
+                <argument type="collection"/>
               </argument>
               <argument key="jquery" type="collection">
                 <argument type="collection">

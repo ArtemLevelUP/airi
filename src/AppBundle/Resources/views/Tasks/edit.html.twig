@@ -19,7 +19,7 @@
         <td>{{ form_widget(form.estimation, {attr: {'class': 'form-control'}}) }}</td>
     </tr><tr>
         <td>{{ 'Tasks.List.Deadline'|trans }}</td>
-        <td>{{ form_widget(form.deadline, {attr: {'class': 'form-control'}}) }}</td>
+        <td>{{ form_widget(form.deadline, {attr: {'class': 'form-control input-inline datepicker', 'data-provide': 'datepicker', 'data-date-format': 'dd.mm.yyyy'}}) }}</td>
     </tr><tr>
         <td>{{ 'Tasks.List.Performer'|trans }}</td>
         <td>{{ form_widget(form.performer, {attr: {'class': 'form-control'}}) }}</td>
@@ -32,4 +32,12 @@
     </table>
 
     {{ form_end(form) }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#task_deadline').datetimepicker({
+                format: 'dd.MM.yyyy hh:mm',
+                language: 'ru-RU'
+            });
+        });
+    </script>
 {% endblock %}

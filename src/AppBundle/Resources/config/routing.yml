@@ -5,3 +5,9 @@ homepage:
 task.new:
     path:     /task/new
     defaults: { _controller: AppBundle:Task:edit }
+
+task.edit:
+    path:     /task/edit/{id}
+    defaults: { _controller: AppBundle:Task:edit }
+    requirements:
+        id: '\d+'

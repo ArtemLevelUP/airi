@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5beb0f5daec8bf65ec98db854a38c623",
-    "content-hash": "b0c0eca43c9633d84ecb6b2993edd6d0",
+    "hash": "d534c7ae10033151024ee3f8b4afe4ec",
+    "content-hash": "e17f8d660950a56853aef0abee3e8f8c",
     "packages": [
         {
             "name": "components/jquery",
@@ -955,6 +955,72 @@
             "time": "2016-09-10 18:51:13"
         },
         {
+            "name": "eonasdan/bootstrap-datetimepicker",
+            "version": "4.17.37",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Eonasdan/bootstrap-datetimepicker.git",
+                "reference": "fd8bd86dd78f789fb742798b7d49aba0a957af62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Eonasdan/bootstrap-datetimepicker/zipball/fd8bd86dd78f789fb742798b7d49aba0a957af62",
+                "reference": "fd8bd86dd78f789fb742798b7d49aba0a957af62",
+                "shasum": ""
+            },
+            "require": {
+                "components/jquery": ">=1.9.1",
+                "moment/moment": ">=2.8",
+                "robloach/component-installer": "*"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "src/js/bootstrap-datetimepicker.js"
+                    ],
+                    "files": [
+                        "build/js/bootstrap-datetimepicker.min.js",
+                        "build/css/bootstrap-datetimepicker.min.css"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Date/time picker widget based on twitter bootstrap",
+            "homepage": "http://eonasdan.github.io/bootstrap-datetimepicker/",
+            "keywords": [
+                "DateTimePicker",
+                "bootstrap"
+            ],
+            "time": "2015-09-10 19:50:15"
+        },
+        {
+            "name": "etdsolutions/moment",
+            "version": "2.15.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/etd-framework/moment.git",
+                "reference": "ed499ab7f4c671382010952f5c3790577d539f80"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/etd-framework/moment/zipball/ed499ab7f4c671382010952f5c3790577d539f80",
+                "reference": "ed499ab7f4c671382010952f5c3790577d539f80",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Shim repository for Moment.js",
+            "homepage": "http://momentjs.com",
+            "time": "2016-09-14 10:06:40"
+        },
+        {
             "name": "friendsofsymfony/user-bundle",
             "version": "dev-master",
             "source": {
@@ -1203,6 +1269,60 @@
                 "minification"
             ],
             "time": "2015-11-12 13:51:40"
+        },
+        {
+            "name": "moment/moment",
+            "version": "2.15.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moment/moment.git",
+                "reference": "c587bf0063c18214238ca83f3f9c6170daf25bed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moment/moment/zipball/c587bf0063c18214238ca83f3f9c6170daf25bed",
+                "reference": "c587bf0063c18214238ca83f3f9c6170daf25bed",
+                "shasum": ""
+            },
+            "require": {
+                "robloach/component-installer": "*"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "moment.js"
+                    ],
+                    "files": [
+                        "min/*.js",
+                        "locale/*.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Wood",
+                    "email": "washwithcare@gmail.com"
+                }
+            ],
+            "description": "Parse, validate, manipulate, and display dates in JavaScript.",
+            "homepage": "http://github.com/moment/moment/",
+            "keywords": [
+                "date",
+                "ender",
+                "format",
+                "i18n",
+                "l10n",
+                "moment",
+                "parse",
+                "time",
+                "validate"
+            ],
+            "time": "2016-09-12 08:47:46"
         },
         {
             "name": "monolog/monolog",

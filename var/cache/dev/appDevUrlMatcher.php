@@ -122,9 +122,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\TaskController::listAction',  '_route' => 'homepage',);
         }
 
-        // task.new
-        if ($pathinfo === '/task/new') {
-            return array (  '_controller' => 'AppBundle\\Controller\\TaskController::editAction',  '_route' => 'task.new',);
+        if (0 === strpos($pathinfo, '/task')) {
+            // task.new
+            if ($pathinfo === '/task/new') {
+                return array (  '_controller' => 'AppBundle\\Controller\\TaskController::editAction',  '_route' => 'task.new',);
+            }
+
+            // task.edit
+            if (0 === strpos($pathinfo, '/task/edit') && preg_match('#^/task/edit/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'task.edit')), array (  '_controller' => 'AppBundle\\Controller\\TaskController::editAction',));
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {
