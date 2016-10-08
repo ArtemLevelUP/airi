@@ -35,7 +35,8 @@
         "components/jquery": "1.11.1",
         "symfony/assetic-bundle": "^2.8",
         "eonasdan/bootstrap-datetimepicker": "^4.17",
-        "etdsolutions/moment": "^2.15"
+        "etdsolutions/moment": "^2.15",
+        "liip/url-auto-converter-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

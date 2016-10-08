@@ -16,7 +16,7 @@
         <tbody>
             {% for task in tasks %}
                 <tr>
-                    <td>{{ task.getTitle() }}</td>
+                    <td><a href="{{ path('task.view', {id: task.getId()}) }}">{{ task.getTitle() }}</a></td>
                     <td>{{ task.getEstimation() }}ч</td>
                     <td>{{ task.getDeadline()|date('d.m.Y H:i') }}</td>
                     <td>{{ ('Tasks.Status.' ~ task.getStatus())|trans }}</td>

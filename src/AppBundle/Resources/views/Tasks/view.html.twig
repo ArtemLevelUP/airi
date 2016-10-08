@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>{{ 'Tasks.List.Title'|trans }}</h2>
+    <div style="width: 100%; text-align: right; padding: 4px;">
+        {% if is_granted('ROLE_ADMIN') %}
+            {% if task.getStatus() == 'done' %}
+                <a href="{{ path('task.status.change', {'status': 'in_progress', 'id': task.id}) }}"><button class="btn btn-info">{{ 'Tasks.Status.ToInProgeress'|trans }}</button></a>
+                <a href="{{ path('task.status.change', {'status': 'approved', 'id': task.id}) }}"><button class="btn btn-success">{{ 'Tasks.Status.approved'|trans }}</button></a>
+            {% endif %}
+            <a href="{{ path('task.status.change', {'status': 'cancelled', 'id': task.id}) }}"><button class="btn btn-danger">{{ 'Tasks.Status.ToCancelled'|trans }}</button></a>
+        {% else %}
+            {% if task.getStatus() == 'new' %}
+                <a href="{{ path('task.status.change', {'status': 'in_progress', 'id': task.id}) }}"><button class="btn btn-info">{{ 'Tasks.Status.ToInProgeress'|trans }}</button></a>
+                <a href="{{ path('task.status.change', {'status': 'clarification', 'id': task.id}) }}"><button class="btn btn-warning">{{ 'Tasks.Status.clarification'|trans }}</button></a>
+            {% endif %}
+            {% if task.getStatus() == 'in_progress' %}
+                <a href="{{ path('task.status.change', {'status': 'clarification', 'id': task.id}) }}"><button class="btn btn-warning">{{ 'Tasks.Status.clarification'|trans }}</button></a>
+                <a href="{{ path('task.status.change', {'status': 'done', 'id': task.id}) }}"><button class="btn btn-success">{{ 'Tasks.Status.done'|trans }}</button></a>
+            {% endif %}
+
+
+        {% endif %}
+    </div>
+
+    {% for flash_message in app.session.flashBag.get('error') %}
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>{{ 'Tasks.List.Caption'|trans }}</th>
+                <td>{{ task.getTitle() }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'Tasks.Status.Caption'|trans }}</th>
+                <td><span class="label label-info">{{ ('Tasks.Status.' ~ task.getStatus())|trans }}</span></td>
+            </tr>
+            <tr>
+                <th>{{ 'Tasks.List.Description'|trans }}</th>
+                <td style="white-space: pre-line;">{{ task.getDescription()|converturls }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'Tasks.List.Attachments'|trans }}</th>
+                <td>
+                    {% for attachment in attachments %}
+                        <a href="{{ path('file.download', {'filename': attachment.filename}) }}"><i class="glyphicon glyphicon-file"></i> {{ attachment.title }}</a><br/>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ 'Tasks.List.Estimation'|trans }}</th>
+                <td>{{ task.getEstimation() }}{{ 'Tasks.Estimation.Hours'|trans }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'Tasks.List.Deadline'|trans }}</th>
+                <td>
+                    {{ task.getDeadline()|date('d.m.Y H:i') }}
+                    {% if task.getDeadline() > 'now'|date %}
+                        <span class="label label-danger">{{ 'Tasks.Deadline.Overtime'|trans }}: {{ expiration.d }}{{ 'Tasks.Deadline.Days'|trans }} {{ expiration.h }}{{ 'Tasks.Deadline.Hours'|trans }}</span>
+                    {% else %}
+                        <span class="label label-success">{{ 'Tasks.Deadline.Remained'|trans }}: {{ expiration.d }}{{ 'Tasks.Deadline.Days'|trans }} {{ expiration.h }}{{ 'Tasks.Deadline.Hours'|trans }}</span>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>{{ 'Tasks.List.Performer'|trans }}</th>
+                <td>{{ task.getPerformer().getUsername() }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'Tasks.List.Creator'|trans }}</th>
+                <td>{{ task.getCreator().getUsername() }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'Tasks.List.Comments'|trans }}</th>
+                <td>{% if comments|length == 0 %}пока нет комментариев{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

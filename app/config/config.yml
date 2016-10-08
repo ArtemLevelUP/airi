@@ -110,13 +110,21 @@ assetic:
             inputs:
                 - %kernel.root_dir%/../vendor/twitter/bootstrap/dist/fonts/glyphicons-halflings-regular.woff
             output: "fonts/glyphicons-halflings-regular.woff"
-        bootstrap_datetimepicker_js:
+        bootstrap_moment_js:
             inputs:
                 - %kernel.root_dir%/../vendor/etdsolutions/moment/moment.js
+        bootstrap_datetimepicker_js:
+            inputs:
                 - %kernel.root_dir%/../vendor/eonasdan/bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js
         bootstrap_datetimepicker_css:
             inputs:
                  - %kernel.root_dir%/../vendor/eonasdan/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css
+                 - %kernel.root_dir%/../vendor/eonasdan/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker-standalone.css
         jquery:
             inputs:
                 - %kernel.root_dir%/../vendor/components/jquery/jquery.js
+
+liip_url_auto_converter:
+    linkclass:
+    target: _blank
+    debugmode: false

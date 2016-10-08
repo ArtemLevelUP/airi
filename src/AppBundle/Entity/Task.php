@@ -14,6 +14,37 @@ use Doctrine\ORM\Mapping as ORM;
 class Task
 {
     const STATUS_NEW = 'new';
+    const STATUS_IN_PROGRESS = 'in_progress';
+    const STATUS_DONE = 'done';
+    const STATUS_APPROVED = 'approved';
+    const STATUS_CANCELLED = 'cancelled';
+    const STATUS_CLARIFICATION = 'clarification';
+    const STATUS_PAID = 'paid';
+
+    const STATUS_CHANGE_POSSIBILITY = [
+        User::ROLE_ADMIN => [
+            Task::STATUS_CLARIFICATION => [
+                Task::STATUS_IN_PROGRESS,
+                Task::STATUS_NEW,
+            ],
+            Task::STATUS_DONE => [
+                Task::STATUS_APPROVED,
+            ],
+            Task::STATUS_APPROVED => [
+                Task::STATUS_PAID,
+            ],
+        ],
+        User::ROLE_USER => [
+            Task::STATUS_NEW => [
+                Task::STATUS_IN_PROGRESS,
+                Task::STATUS_CLARIFICATION,
+            ],
+            Task::STATUS_IN_PROGRESS => [
+                Task::STATUS_DONE,
+                Task::STATUS_CLARIFICATION,
+            ]
+        ],
+    ];
 
     /**
      * @var int

@@ -1,4 +1,3 @@
-{% trans_default_domain 'FOSUserBundle' %}
 
 <div style="width: 450px; margin: 50px auto;">
     {% if error %}
@@ -10,20 +9,20 @@
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
         <div class="form-group">
-            <label for="username">Email:</label>
+            <label for="username">{{ 'User.Login.E-mail'|trans }}:</label>
             <input type="email" class="form-control" id="username" name="_username" value="{{ last_username }}" required="required"/>
         </div>
 
         <div class="form-group">
-            <label for="password">Пароль:</label>
+            <label for="password">{{ 'User.Login.Password'|trans }}:</label>
             <input type="password" class="form-control" id="password" name="_password" required="required"/>
         </div>
 
         <div class="checkbox">
             <label>
-                <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> Запомнить
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> {{ 'User.Login.Remember'|trans }}
             </label>
-            <button style="float: right;" id="_submit" name="_submit" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i> Вход</button>
+            <button style="float: right;" id="_submit" name="_submit" type="submit" class="btn btn-success"><i class="glyphicon glyphicon-ok"></i> {{ 'User.Login.ButtonLogin'|trans }}</button>
         </div>
 
     </form>

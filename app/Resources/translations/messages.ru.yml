@@ -1,6 +1,11 @@
 User:
     Login:
         ErrorMessage: Неправильный логин или пароль
+        E-mail: E-mail
+        Password: Пароль
+        Remember: Запомнить
+        ButtonLogin: Вход
+        ButtonLogout: Выйти
 
 Tasks:
     Status:
@@ -10,6 +15,11 @@ Tasks:
         approved: Утверждена
         cancelled: Отменена
         clarification: Нужны уточнения
+        paid: Оплачена
+        Caption: Статус
+        ToInProgeress: В работу
+        ToCancelled: Отменить
+        CouldNotChange: Невозможно изменить статус задачи на "%status%"
     List:
         Title: Список задач
         Caption: Название
@@ -18,7 +28,22 @@ Tasks:
         Estimation: Время на выполнение
         Deadline: Дедлайн
         Status: Статус
+        Comments: Комментарии
         Creator: Постановщик
         Performer: Исполнитель
     Form:
         Save: Сохранить
+    Estimation:
+        Hours: ч
+    Deadline:
+        Overtime: просрочка
+        Remained: осталось
+        Days: дн
+        Hours: ч
+    Create: Создать задачу
+Payments:
+    Caption: Платежи
+    List:
+        User: Исполнитель
+        SumToPay: К выплате суммарно по задачам
+    Pay: Выплатить

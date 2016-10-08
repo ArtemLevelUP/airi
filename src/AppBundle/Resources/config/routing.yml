@@ -11,3 +11,32 @@ task.edit:
     defaults: { _controller: AppBundle:Task:edit }
     requirements:
         id: '\d+'
+
+task.view:
+    path:     /task/{id}
+    defaults: { _controller: AppBundle:Task:view }
+    requirements:
+        id: '\d+'
+
+task.status.change:
+    path:     /task/status-change/{status}/{id}
+    defaults: { _controller: AppBundle:Task:changeStatus }
+    requirements:
+        status: 'new|in_progress|done|approved|cancelled|clarification|paid'
+        id: '\d+'
+
+file.download:
+    path:     /download/{filename}
+    defaults: { _controller: AppBundle:File:get }
+    requirements:
+        filename: '(task|comment)(.*)'
+
+payment.toPay:
+    path:     /payments
+    defaults: { _controller: AppBundle:Payment:list }
+
+payment.toPay.tasks:
+    path:     /payments/{user}
+    defaults: { _controller: AppBundle:Payment:view }
+    requirements:
+        id: '\d+'

@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Liip\UrlAutoConverterBundle\LiipUrlAutoConverterBundle(),
 
             new AppBundle\AppBundle(),
             new UserBundle\UserBundle(),

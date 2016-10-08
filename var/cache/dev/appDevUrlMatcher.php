@@ -133,6 +133,34 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'task.edit')), array (  '_controller' => 'AppBundle\\Controller\\TaskController::editAction',));
             }
 
+            // task.view
+            if (preg_match('#^/task/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'task.view')), array (  '_controller' => 'AppBundle\\Controller\\TaskController::viewAction',));
+            }
+
+            // task.status.change
+            if (0 === strpos($pathinfo, '/task/status-change') && preg_match('#^/task/status\\-change/(?P<status>new|in_progress|done|approved|cancelled|clarification|paid)/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'task.status.change')), array (  '_controller' => 'AppBundle\\Controller\\TaskController::changeStatusAction',));
+            }
+
+        }
+
+        // file.download
+        if (0 === strpos($pathinfo, '/download') && preg_match('#^/download/(?P<filename>(task|comment)(.*))$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'file.download')), array (  '_controller' => 'AppBundle\\Controller\\FileController::getAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/payments')) {
+            // payment.toPay
+            if ($pathinfo === '/payments') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PaymentController::listAction',  '_route' => 'payment.toPay',);
+            }
+
+            // payment.toPay.tasks
+            if (preg_match('#^/payments/(?P<user>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'payment.toPay.tasks')), array (  '_controller' => 'AppBundle\\Controller\\PaymentController::viewAction',));
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {
